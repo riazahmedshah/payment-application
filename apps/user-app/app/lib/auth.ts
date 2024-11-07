@@ -53,7 +53,7 @@ export const authOptions: AuthOptions = {
     callbacks: {
         async jwt({ token, user }:{token:JWT, user:User}){
             if(user){
-                token._id = user.id?.toString();
+                token.id = user.id?.toString();
                 token.username = user.name;
             }
             return token
@@ -62,15 +62,10 @@ export const authOptions: AuthOptions = {
             if (token) {
                 session.user.id = token.id
                 session.user.name = token.name
-            } else {
-                console.error("Token or token.sub is undefined");
             }
             return session;
         },
         
-        // async redirect() {
-        //     return 'http://localhost:3000'; // Force redirect to port 3000
-        // }
         
     }
 };

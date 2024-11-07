@@ -1,14 +1,9 @@
 {
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "module": "ESNext", // Make sure it's ESNext or similar
-    "target": "ESNext",
-    "moduleResolution": "Node",
-    "esModuleInterop": true, // Add this to ensure compatibility with CommonJS modules
-    "skipLibCheck": true // Optional, but can speed up compilation
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+      "outDir": "dist"
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "dist"]
 }
 
