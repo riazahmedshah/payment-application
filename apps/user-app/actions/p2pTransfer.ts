@@ -26,7 +26,7 @@ export const p2pTransfer = async(to : string, amount:Number) =>{
         }
     };
     
-    await db.$transaction(async(tx) => {
+    await db.$transaction(async(tx:any) => {
         await tx.$queryRaw`SELECT * FROM "Balance" WHERE "userId" = ${Number(from)} FOR UPDATE`;
         const fromBalance = await tx.balance.findUnique({
             where:{userId:Number(from.id)}
